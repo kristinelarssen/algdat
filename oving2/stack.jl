@@ -2,11 +2,14 @@
 function reverseandlimit(array, maxnumber)
     s = []
     for i in length(array):-1:1
-        push!(s, array[i])
+        if array[i] > maxnumber
+            push!(s, maxnumber)
+        else 
+            push!(s, array[i])
+        end
     end
-    
+    return s
 end
 
-list = [3, 2, 1]
-
-reverseandlimit(list, 3)
+list = [5, 4, 3, 2, 1]
+println(reverseandlimit(list, 3))
