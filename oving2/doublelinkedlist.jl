@@ -2,8 +2,8 @@
 
 
 mutable struct NodeDoublyLinked
-    prev::Union{NodeDoublyLinked, Nothing} # Er enten forrige node eller nothing
-    next::Union{NodeDoublyLinked, Nothing} # Er enten neste node eller nothing
+    prev::Union{NodeDoublyLinked,Nothing} # Er enten forrige node eller nothing
+    next::Union{NodeDoublyLinked,Nothing} # Er enten neste node eller nothing
     value::Int # Verdien til noden
 end
 
@@ -36,7 +36,7 @@ function maxofdoublelinkedlist(linkedlist)
         if currentnode.value > max
             max = currentnode.value
         end
-        if currentnode.next == nothing
+        if currentnode.next === nothing
             last = true
         else
             currentnode = currentnode.next
@@ -52,7 +52,7 @@ function maxofdoublelinkedlist(linkedlist)
         if currentnode.value > max
             max = currentnode.value
         end
-        if currentnode.prev == nothing
+        if currentnode.prev === nothing
             first = true
         else
             currentnode = currentnode.prev

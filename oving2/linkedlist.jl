@@ -1,7 +1,7 @@
 ### LINKED LIST
 
 mutable struct Node
-    next::Union{Node, Nothing} # next kan peke på et Node-objekt eller ha verdien nothing.
+    next::Union{Node,Nothing} # next kan peke på et Node-objekt eller ha verdien nothing.
     value::Int
 end
 
@@ -20,11 +20,11 @@ end
 
 
 function findindexinlist(linkedlist, index)
-   head = linkedlist
-   for i in 1:index
+    head = linkedlist
+    for i in 1:index
         if i == index
             return head.value
-        elseif head.next == nothing
+        elseif head.next === nothing
             return -1
         else
             head = head.next
